@@ -18,10 +18,10 @@ $.ajaxPrefilter(function (options) {
     
     // 登录拦截 不登录不允许访问其他页面
     options.complete = function (res) {
-        console.log(res);
+        // console.log(res);
         var obj = res.responseJSON;
         if (obj.status === 1 && obj.message === '身份认证失败！') {
-            // 清醒清空token 
+            // 清空token 
             localStorage.removeItem('token')
             // 强制跳转登录页面
             location.href = '/login.html'
