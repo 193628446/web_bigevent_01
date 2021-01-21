@@ -1,11 +1,10 @@
 // 每次调用 $.get() 或者$.ajax() 会先调用这个函数
-var baseURL = 'http://api-breakingnews-web.itheima.net'
+var baseURL = 'http://api-breakingnews-web.itheima.net';
 $.ajaxPrefilter(function (options) {
     // 获取到ajax 的所有参数
     // alert(options.url)
     // 添加路径前缀
     options.url = baseURL + options.url;
-
 
     // 统一为有权限的接口 设置headers 请求头
     // 以 /my 开头的请求路径，需要在请求头中携带 Authorization 身份认证字段，
